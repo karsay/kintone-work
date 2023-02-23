@@ -52,6 +52,84 @@ class OwnerSeeder extends Seeder
                 'password' => Hash::make('password123'),
                 'created_at' => '2023/01/01 11:11:11'
             ],
+            [
+                'name' => 'test7',
+                'email' => 'test7@test.com',
+                'password' => Hash::make('password123'),
+                'created_at' => '2023/01/01 11:11:11'
+            ],
+            [
+                'name' => 'test8',
+                'email' => 'test8@test.com',
+                'password' => Hash::make('password123'),
+                'created_at' => '2023/01/01 11:11:11'
+            ],
+            [
+                'name' => 'test9',
+                'email' => 'test9@test.com',
+                'password' => Hash::make('password123'),
+                'created_at' => '2023/01/01 11:11:11'
+            ],
+            [
+                'name' => 'test10',
+                'email' => 'test10@test.com',
+                'password' => Hash::make('password123'),
+                'created_at' => '2023/01/01 11:11:11'
+            ],
+            [
+                'name' => 'test11',
+                'email' => 'test11@test.com',
+                'password' => Hash::make('password123'),
+                'created_at' => '2023/01/01 11:11:11'
+            ],
+            [
+                'name' => 'test12',
+                'email' => 'test12@test.com',
+                'password' => Hash::make('password123'),
+                'created_at' => '2023/01/01 11:11:11'
+            ],
+            [
+                'name' => 'test13',
+                'email' => 'test13@test.com',
+                'password' => Hash::make('password123'),
+                'created_at' => '2023/01/01 11:11:11'
+            ],
+            [
+                'name' => 'test14',
+                'email' => 'test14@test.com',
+                'password' => Hash::make('password123'),
+                'created_at' => '2023/01/01 11:11:11'
+            ],
+            [
+                'name' => 'test15',
+                'email' => 'test15@test.com',
+                'password' => Hash::make('password123'),
+                'created_at' => '2023/01/01 11:11:11'
+            ],
+            [
+                'name' => 'test16',
+                'email' => 'test16@test.com',
+                'password' => Hash::make('password123'),
+                'created_at' => '2023/01/01 11:11:11'
+            ],
+            [
+                'name' => 'test17',
+                'email' => 'test17@test.com',
+                'password' => Hash::make('password123'),
+                'created_at' => '2023/01/01 11:11:11'
+            ],
+            [
+                'name' => 'test18',
+                'email' => 'test18@test.com',
+                'password' => Hash::make('password123'),
+                'created_at' => '2023/01/01 11:11:11'
+            ],
+            [
+                'name' => 'test19',
+                'email' => 'test19@test.com',
+                'password' => Hash::make('password123'),
+                'created_at' => '2023/01/01 11:11:11'
+            ],
         ]);
     }
 }
