@@ -18,7 +18,9 @@ class DatabaseSeeder extends Seeder
         $this->call([
             AdminSeeder::class,
             OwnerSeeder::class,
-            ShopSheeder::class
+            ShopSheeder::class,
+            ProductSeeder::class,
+            StockSeeder::class
         ]);
     }
 }
