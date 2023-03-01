@@ -22,7 +22,6 @@
                             <img class="object-cover object-center w-full h-full block" src="{{$product->image_url ?? ''}}">
                           </div>
                           <div class="text-gray-700">{{ $product->name }}</div>
-                          <div class="text-gray-400">在庫：{{$product->stock->sum('quantity')}}</div>
                         </div>
                       </a>
                     </div>

@@ -55,7 +55,6 @@ class ProductController extends Controller
             'information' => ['required', 'string', 'max:1000'],
             'image_url' => ['required', 'string', 'max:1000'],
             'price' => ['required', 'integer'],
-            'quantity' => ['required', 'integer', 'between:0,999'],
             // 'is_selling' => ['required'],
         ]);
 
@@ -69,11 +68,6 @@ class ProductController extends Controller
                     // 'is_selling' => $request->is_selling,
                 ]);
 
-                Stock::create([
-                    'product_id' => $product->id,
-                    'type' => 1,
-                    'quantity' => $request->quantity,
-                ]);
             }, 2);
         } catch(Throwable $e) {
             Log::error($e);
@@ -127,7 +121,7 @@ class ProductController extends Controller
             'information' => ['required', 'string', 'max:1000'],
             'image_url' => ['required', 'string', 'max:1000'],
             'price' => ['required', 'integer'],
-            'quantity' => ['required', 'integer', 'between:0,999'],
+            // 'quantity' => ['required', 'integer', 'between:0,999'],
             // 'is_selling' => ['required'],
         ]);
 
@@ -136,9 +130,6 @@ class ProductController extends Controller
         $product->information = $request->information;
         $product->image_url = $request->image_url;
         $product->price = $request->price;
-
-        $stock = $product->stock();
-        $stock->quantity = $request->quantity;
 
         $product->save();
 
@@ -158,6 +149,12 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Product::findOrFail($id)->delete();
+        return redirect()
+        ->route('admin.products.index')
+        ->with([
+            'message' => '商品情報を削除しました',
+            'status' => 'alert',
+        ]);
     }
 }
