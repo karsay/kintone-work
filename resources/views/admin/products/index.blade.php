@@ -5,7 +5,7 @@
       </h2>
   </x-slot>
 
-  <div class="py-12">
+  <div class="py-6">
       <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
           <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
               <div class="p-6 bg-white border-b border-gray-200">
@@ -22,7 +22,6 @@
                             <img class="object-cover object-center w-full h-full block" src="{{$product->image_url ?? ''}}">
                           </div>
                           <div class="text-gray-700">{{ $product->name }}</div>
-                          <div class="text-gray-400">在庫：{{$product->stock->sum('quantity')}}</div>
                         </div>
                       </a>
                     </div>

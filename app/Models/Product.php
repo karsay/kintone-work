@@ -16,9 +16,4 @@ class Product extends Model
         'image_url',
         'price',
     ];
-
-    public function stock()
-    {
-        return $this->hasMany(Stock::class);
-    }
 }

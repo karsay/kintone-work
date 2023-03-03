@@ -38,13 +38,13 @@
                           <input type="number" id="price" name="price" value="{{ $product->price }}" required class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
                         </div>
                       </div>
-                      <div class="p-2 w-1/2 mx-auto">
+                      {{-- <div class="p-2 w-1/2 mx-auto">
                         <div class="relative">
                           <label for="quantity" class="leading-7 text-sm text-gray-600">現在の在庫 ※必須</label>
                           <input type="number" id="quantity" name="quantity" value="{{ $quantity }}" required class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
                           <span class="text-sm">0〜990の範囲で入力してください</span>
                         </div>
-                      </div>
+                      </div> --}}
                       {{-- <div class="p-2 w-1/2 mx-auto">
                         <div class="relative">
                           <label for="category" class="leading-7 text-sm text-gray-600">カテゴリー</label>
@@ -66,6 +66,13 @@
                       </div>
                     </div>
                   </form>
+                  <form id="delete_{{$product->id}}" method="post" action="{{ route('admin.products.destroy', ['product' => $product->id]) }}">
+                    @csrf
+                    @method('delete')
+                    <div class="p-2 w-full flex justify-around mt-4">
+                      <a href="#" data-id="{{ $product->id }}" onclick="deletePost(this)" class="text-white bg-red-400 border-0 py-2 px-4 focus:outline-none hover:bg-red-500 rounded">削除</a>
+                    </div>
+                  </form>
               </div>
           </div>
       </div>
@@ -85,7 +92,14 @@
         document.getElementById(imageName + '_hidden').value = imageId
         MicroModal.close(modal);
     }, )
-    })  
+    })
+
+    function deletePost(e) {
+      'use strict';
+      if (confirm('本当に削除してもいいですか?')) {
+        document.getElementById('delete_' + e.dataset.id).submit();
+      }
+    }
   </script>
 
 </x-app-layout>
